@@ -1,0 +1,252 @@
+/***********************
+Universal Selector
+************************/
+
+* {
+	box-sizing: border-box;
+}
+
+/***********************
+Layout
+************************/
+
+#page-wrapper {
+	width:100%;
+	min-width:320px;
+}
+
+.main-content {
+	width:90%;
+	margin: auto;
+}
+
+.main-header {
+	padding: 15px 0;
+}
+
+.main-header h1 {
+	margin:0;
+}
+
+#intro-wrapper {
+	margin-bottom: 4px;
+	padding: 15px 0;
+}
+
+fieldset {
+	padding:0;
+	margin:0;
+}
+
+textarea,
+input[type="submit"] {
+	width:100%;
+}
+
+legend {
+	padding: 20px 0;
+}
+
+.contact-information-fieldset input,
+.contact-information-fieldset select,
+textarea {
+	margin:5px 0 20px;
+}
+
+.contact-information-fieldset input,
+.contact-information-fieldset select,
+textarea,
+input[type="submit"] {
+	border-radius: 5px;
+}
+
+.contact-information-fieldset input,
+.contact-information-fieldset select {
+	height:50px;
+}
+
+.contact-information-fieldset input[class="zip-input"] {
+	display:block;
+	width:50%;
+}
+
+.margin-fix { /*used in the bottom field set of the form to provide spacing between the few random element sections*/
+	display:block;
+	margin-top:30px;
+}
+
+.newlestter-fieldset input:not([class="zip-input"]) {
+	margin-right:15px;
+}
+
+textarea {
+	resize: none;
+	height:8em;
+}
+
+input[type="submit"] {
+	padding:15px 0;
+	margin:20px 0;
+}
+
+.main-footer {
+	padding:20px 0;
+	margin-top: 20px;
+}
+
+/***********************
+Typography
+************************/
+
+#page-wrapper {
+	font-family: 'Merriweather', serif;
+	letter-spacing: 1px;
+}
+
+p,
+label,
+select,
+.footer-text,
+input::placeholder,
+textarea,
+input:not([type="submit"]){
+	font-size: .8em;
+}
+
+.main-header,
+#intro-wrapper,
+.main-footer {
+	text-align: center;
+}
+
+legend {
+	font-weight: bold;
+}
+
+input[required]::placeholder {
+	text-align: right;
+	padding-right: 15px;
+}
+
+input:not([type="submit"]) {
+	padding:0 15px;
+}
+
+.footer-text,
+input[required]::placeholder {
+	font-style: italic;
+}
+
+/***********************
+Colors
+************************/
+
+.main-header,
+.main-footer {
+	background-color: #2d3945;
+	color: #fff;
+}
+
+input,
+select,
+textarea {
+	background-color: #eff0f1;
+}
+
+input[type="submit"] {
+	background-color: #4ebbb5;
+	color:#fff;
+}
+
+/***********************
+Borders
+************************/
+
+#intro-wrapper {
+	border-bottom:solid 4px #000;
+}
+
+#form-wrapper {
+	border-top: solid 2px #000;
+}
+
+.contact-information-fieldset {
+	border-bottom:solid 2px #000;
+}
+
+input,
+fieldset,
+textarea,
+select {
+	border:none;
+}
+
+/***********************
+Psuedo classes
+************************/
+
+input[type="submit"]:active {
+	opacity: .5;
+}
+
+input,
+select,
+textarea {
+	transition: box-shadow .5s linear;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.6);
+	outline:none;
+}
+
+input:not(:focus),
+select:not(:focus),
+textarea:not(:focus) {
+	box-shadow: none;
+}
+
+
+/***********************
+Media Queries
+************************/
+
+/*Had strange behaviour of the width not getting smaller for the input items in the min:width media querie so i added the width to this querie to solve the issue and the width now changes on higher screen sizes*/
+@media screen and (max-width:767px) {
+	
+	.contact-information-fieldset input:not([class="zip-input"]),
+	select {
+		width:100%;
+	}
+	
+}
+
+@media screen and (min-width:768px) {
+	
+	.main-content {
+		max-width:1000px;
+		margin:auto;
+	}
+
+	.contact-information-fieldset label {
+		float:left;
+		height:50px;
+		width:25%;
+		padding:18px 0;
+		margin:5px 0 20px;
+	}
+	
+	.contact-information-fieldset input:not([class="zip-input"]),
+	.contact-information-fieldset select {
+		float:right;
+		width:75%;
+	}
+	
+	.contact-information-fieldset input[class="zip-input"] {
+		width:25%;
+		float:left;
+	}
+	
+}
